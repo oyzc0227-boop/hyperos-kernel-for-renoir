@@ -45,7 +45,7 @@ jobs:
       - name: Compress
         run: tar -czvf build.tar.gz ../out
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build.tar.gz

@@ -25,7 +25,7 @@ jobs:
           curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main
           
           export KERNEL_ROOT="$(pwd)"
-          git clone https://gitlab​.com/simonpunk​/susfs4ksu -b kernel-5.4
+          git clone https://gitlab.com/simonpunk/susfs4ksu -b kernel-5.4
           
           cp ./susfs4ksu/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
           cp ./susfs4ksu/kernel_patches/KernelSU/kernel/sucompat.h ./KernelSU/kernel/

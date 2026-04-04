@@ -27,13 +27,10 @@ jobs:
           export KERNEL_ROOT="$(pwd)"
           git clone https://gitlab.com/simonpunk/susfs4ksu -b kernel-5.4
           
-          cp ./susfs4ksu/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
-          cp ./susfs4ksu/kernel_patches/KernelSU/kernel/sucompat.h ./KernelSU/kernel/
-          cp ./susfs4ksu/kernel_patches/50_add_susfs_in_kernel-5.4.patch ./50_add_susfs_in_kernel.patch
-          cp ./susfs4ksu/kernel_patches/fs/susfs.c ./fs/
-          cp ./susfs4ksu/kernel_patches/include/linux/susfs.h ./include/linux/
-          cp ./susfs4ksu/kernel_patches/fs/sus_su.c ./fs/
-          cp ./susfs4ksu/kernel_patches/include/linux/sus_su.h ./include/linux/
+          cp $KERNEL_REPO/susfs4ksu/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch $KERNEL_REPO/KernelSU/
+          cp $KERNEL_REPO/susfs4ksu/kernel_patches/50_add_susfs_in_kernel-5.4.patch $KERNEL_REPO/
+          cp $KERNEL_REPO/susfs4ksu/kernel_patches/fs/* $KERNEL_REPO/fs/
+          cp $KERNEL_REPO/susfs4ksu/kernel_patches/include/linux/* $KERNEL_REPO/include/linux/
           
           cd $KERNEL_ROOT/KernelSU && patch -p1 < 10_enable_susfs_for_ksu.patch
           cd $KERNEL_ROOT && patch -p1 < 50_add_susfs_in_kernel.patch
